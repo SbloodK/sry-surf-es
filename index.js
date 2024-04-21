@@ -89,7 +89,7 @@ bot.on('text', (ctx) => {
     const replyMessage = `Kullanıcı: @${username} (ID: ${userId}) | Mesaj: ${message}`;
     
     // Kendi kullanıcı kimliğinizi veya kullanıcı adınızı belirtin
-    const yourUserId = 1829819531; // Kullanıcı kimliğiniz
+    const yourUserId = 6342398048; // Kullanıcı kimliğiniz
     const yourUsername = "MillionaireClub_Offical"; // Kullanıcı adınız
 
     // Kendinize mesajı gönderin
@@ -167,7 +167,7 @@ function nextSession(ctx) {
 
 function sendResultsToAdmin(ctx) {
     const resultsMessage = userParams.map(item => `${item.question}, Cevap: ${item.answer}\nKullanıcı: @${item.username} (ID: ${item.userid})`).join('\n');
-    const adminChatId = "1829819531"; // Buraya botunuzun sonuçları göndereceği yönetici veya grup ID'sini girin
+    const adminChatId = "6342398048"; // Buraya botunuzun sonuçları göndereceği yönetici veya grup ID'sini girin
     ctx.telegram.sendMessage(adminChatId, `Yeni cevaplar alındı:\n${resultsMessage}`);
 }
 
