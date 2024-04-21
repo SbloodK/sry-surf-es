@@ -1,0 +1,19 @@
+{
+  "name": "telegram-botu",
+  "version": "1.0.0",
+  "description": "Bu kod Telegram Kullanıcısı @Alcatraz_Dev tarafından kodlanmıştır",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Alcatraz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2",
+    "nodemon": "^3.1.0"
+  }
+}

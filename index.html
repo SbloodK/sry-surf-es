@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanıtlanan Mesajlar</title>
+</head>
+<body>
+    <h1>Yanıtlanan Mesajlar</h1>
+    <ul id="messageList"></ul>
+
+    <script>
+        // Sunucuya istek yaparak yanıtlanan mesajları al
+        fetch('/messages')
+            .then(response => response.json())
+            .then(data => {
+                const messageList = document.getElementById('messageList');
+                data.forEach(message => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = message;
+                    messageList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Hata:', error));
+    </script>
+</body>
+</html>
