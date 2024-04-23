@@ -121,7 +121,7 @@ function nextSession(ctx) {
         sendResultsToAdmin(ctx);
 
         // Soruların cevaplarını düzgün bir biçimde listele
-        let answersList = userParams.map((item, index) => `${index + 1}. ${item.answer}`).join("\n        - ");
+        let answersList = userParams.map((item, index) => `${index + 1}. ${item.answer}`).join("\n        ");
 
         ctx.replyWithPhoto(
             'https://i.hizliresim.com/1vm4me9.jpg', // Fotoğrafın URL'si
@@ -130,8 +130,8 @@ function nextSession(ctx) {
         
         ⏳ We will review it shortly, please wait
         
-        Your answers: 
-        - ${answersList}
+        Your answers:
+        ${answersList}
         
         ❗️You can also visit our website and learn more about us and what we can offer you!
         
@@ -145,7 +145,6 @@ function nextSession(ctx) {
                 }
             }
         );
-        
 
         nowSession = 0;
         userParams = [];
@@ -165,6 +164,8 @@ function nextSession(ctx) {
         }
     });
 }
+
+
 
 
 
