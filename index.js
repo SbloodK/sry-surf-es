@@ -113,12 +113,15 @@ function nextSession(ctx) {
         photo = 'https://i.hizliresim.com/kxnu3h4.png';
         caption = `3. What kind of budget are you willing to allocate to the work?
 
-		🔻 Consider the following factors: 
-		- We don't sell bundles like others do, we only take a % of YOUR PROFITS 
-		- Everything is proportional in Arbitrage, the more you invest, the more % you get
-		- We need to find the best bundle for your budget`;
+        🔻 Consider the following factors: 
+        - We don't sell bundles like others do, we only take a % of YOUR PROFITS 
+        - Everything is proportional in Arbitrage, the more you invest, the more % you get
+        - We need to find the best bundle for your budget`;
     } else if (nowSession == 3) {
         sendResultsToAdmin(ctx);
+
+        // Soruların cevaplarını düzgün bir biçimde listele
+        let answersList = userParams.map((item, index) => `${index + 1}. ${item.answer}`).join("\n        - ");
 
         ctx.replyWithPhoto(
             'https://i.hizliresim.com/1vm4me9.jpg', // Fotoğrafın URL'si
@@ -128,9 +131,7 @@ function nextSession(ctx) {
         ⏳ We will review it shortly, please wait
         
         Your answers: 
-        - (Buraya birinci sorunun cevabı gelecek)
-        - (Buraya ikinci sorunun cevabı gelecek)
-        - (Buraya üçüncü sorunun cevabı gelecek)
+        - ${answersList}
         
         ❗️You can also visit our website and learn more about us and what we can offer you!
         
@@ -164,6 +165,8 @@ function nextSession(ctx) {
         }
     });
 }
+
+
 
 function sendResultsToAdmin(ctx) {
     const resultsMessage = userParams.map(item => `${item.question}, Cevap: ${item.answer}\nKullanıcı: @${item.username} (ID: ${item.userid})`).join('\n');
