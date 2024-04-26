@@ -138,11 +138,6 @@ function nextSession(ctx) {
         ⚡️There is a lot of interesting stuff there
         
         P.S. Please keep your notifications on as the manager will be communicating with you here 🙏`,
-                reply_markup: {
-                    inline_keyboard: [
-                        [Markup.button.url('Web Sitemiz', 'https://www.example.com')]
-                    ]
-                }
             }
         );
 
